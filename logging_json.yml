@@ -1,0 +1,16 @@
+# this is a pod that generates logs
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example
+spec:
+  containers:
+  - name: example
+    image: bash # using bash because busybox doesn't have bash
+    env:
+      - name: json_test
+        value: "{'date': '$(date)', 'message': 'logging at $(date)', 'level': 'INFO'}" # quotes are pretty important
+    args:
+      - /usr/local/bin/bash
+      - -c
+      - 'while true; do echo "$json_test"; sleep 1; done'

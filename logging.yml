@@ -7,4 +7,7 @@ spec:
   containers:
   - name: example
     image: busybox
-    args: [/bin/sh, -c, 'while true; do echo $(date); sleep 1; done']
+    args:
+      - /bin/sh
+      - -c
+      - 'while true; do echo $(date); sleep 1; done'
