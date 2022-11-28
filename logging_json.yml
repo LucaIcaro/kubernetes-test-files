@@ -1,8 +1,11 @@
 # this is a pod that generates logs
+# TBD: it's still not working
 apiVersion: v1
 kind: Pod
 metadata:
   name: example
+  annotations:
+    co.elastic.logs/json.keys_under_root: "true"
 spec:
   containers:
   - name: example
